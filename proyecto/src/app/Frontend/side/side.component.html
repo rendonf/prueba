@@ -1,0 +1,18 @@
+<mat-sidenav-container class="example-container">
+
+    <mat-sidenav id="Menu" #sidenav mode="side" [(opened)]="isOpen">
+        <app-content></app-content>
+    </mat-sidenav>
+
+    <mat-sidenav-content id="Contenido">
+        <!--<img src="assets/img/uceva.png">-->
+
+        <app-dashboard [hidden]="csensores"></app-dashboard>
+        
+            
+        <app-form [hidden]="cusuarios">m</app-form>
+        
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,56 @@
+<div id="contenedor">
+  <button (click)="binding()" mat-raised-button>Binding</button>
+  <h1>{{titulo}}</h1>
+  
+  <div id="areas">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Area</th>
+          <th scope="col">Departamento</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <ng-container *ngFor="let item of areas">
+          <tr>
+
+            <td><button (click)="boton(item)" mat-raised-button>{{item.name}}</button></td>
+            <td>
+              <h5>{{item.departament}}</h5>
+            </td>
+
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+
+  </div>
+  <div id="detalles">
+    <mat-label>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h5> Town : {{details.town}} </h5>
+
+      <h5> Boss : {{details.boss}} </h5>
+
+      <h5>Age : {{details.age}} </h5>
+
+      <h5> Last_degree : {{details.last_degree}} </h5>
+    </mat-label>
+  </div>
+  
+  <div id="binding" [hidden]="visible">
+    <h5>Titulo</h5> <input [(ngModel)]="titulo" required>
+    <h5>Town</h5> <input [(ngModel)]="details.town" required>
+    <h5>Boss</h5> <input [(ngModel)]="details.boss" required>
+    <h5>Age</h5> <input [(ngModel)]="details.age" required>
+    <h5>Last_degree</h5> <input [(ngModel)]="details.last_degree" required>
+  </div>
+
+
+</div>
